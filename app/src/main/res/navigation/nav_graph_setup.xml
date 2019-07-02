@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_setup"
+    app:startDestination="@id/navigation_setup_welcome">
+    <fragment
+        android:id="@+id/navigation_setup_welcome"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.fragment.SetupWelcomeFragment"
+        android:label="fragment_setup_welcome"
+        tools:layout="@layout/fragment_setup_welcome">
+        <action
+            android:id="@+id/action_navigation_setup_welcome_to_navigation_setup_pin"
+            app:destination="@id/navigation_setup_pin"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_setup_pin"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.fragment.SetupPinFragment"
+        android:label="fragment_setup_pin"
+        tools:layout="@layout/fragment_setup_pin">
+        <action
+            android:id="@+id/action_navigation_setup_pin_to_navigation_setup_payment_address"
+            app:destination="@id/navigation_setup_payment_address"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_setup_payment_address"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.fragment.SetupPaymentAddressFragment"
+        android:label="fragment_setup_payment"
+        tools:layout="@layout/fragment_setup_payment">
+        <action
+            android:id="@+id/action_navigation_setup_payment_address_to_navigation_setup_business"
+            app:destination="@id/navigation_setup_business"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_setup_business"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.fragment.SetupInvoiceNameFragment"
+        android:label="fragment_setup_business"
+        tools:layout="@layout/fragment_setup_invoice_name">
+        <action
+            android:id="@+id/action_navigation_setup_business_to_navigation_setup_complete"
+            app:destination="@id/navigation_setup_complete"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_setup_complete"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.fragment.SetupCompleteFragment"
+        android:label="fragment_setup_complete"
+        tools:layout="@layout/fragment_setup_complete" />
+    <dialog
+        android:id="@+id/navigation_setup_quit"
+        android:name="com.radixdlt.android.apps.pos.ui.setup.dialog.SetupQuitDialogFragment"
+        android:label="dialog_setup_quit" />
+</navigation>

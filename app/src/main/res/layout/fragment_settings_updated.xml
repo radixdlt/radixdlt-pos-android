@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ui.setup.activity.SetupActivity">
+
+    <TextView
+        android:id="@+id/settingsUpdatedTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/settings_updated_fragment_title_xml"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/settingsUpdatedAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/settingsUpdatedFinishButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsUpdatedTitleTextView"
+        app:layout_constraintVertical_bias="0.50"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/success" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsUpdatedFinishButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/radix_pos_common_finish_button_xml"
+        app:backgroundTint="@color/radixGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/rippleWhite" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

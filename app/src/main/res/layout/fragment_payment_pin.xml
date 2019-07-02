@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:keypad="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.payment.activity.PaymentActivity">
+
+    <TextView
+        android:id="@+id/paymentPinHeaderTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/fragment_payment_pin_enter_pin"
+        android:textColor="@color/materialDarkGrey"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinPinInvisibleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.00" />
+
+    <TextView
+        android:id="@+id/paymentPinPinDisabledTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.75"
+        android:text="@string/radix_pos_common_pin_four_asterisk"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentPinPinInvisibleView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/paymentPinPinTextView"
+        android:layout_width="208dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:letterSpacing="0.75"
+        android:text=""
+        android:textColor="@color/radixGreen"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentPinPinInvisibleView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/paymentPinPinInvisibleView"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.50" />
+
+    <TextView
+        android:id="@+id/paymentPinErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:textColor="@color/lightRed"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentPinPinTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Pin error" />
+
+    <com.radixdlt.android.apps.pos.ui.view.keypad.KeyPadView
+        android:id="@+id/paymentPinKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentPinConfirmButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        keypad:keypad_background_resource="@drawable/keypad_white_pressed_ripple"
+        keypad:keypad_clear_image_resource="@drawable/ic_close_keypad_black"
+        keypad:keypad_grid_background_color="@color/disabledLightGray"
+        keypad:keypad_grid_line_thickness="1dp"
+        keypad:keypad_grid_visible="true"
+        keypad:keypad_image_resource="@drawable/ic_backspace_black"
+        keypad:keypad_text_color="@color/materialDarkGrey"
+        keypad:keypad_text_limit="4"
+        keypad:keypad_text_size="12sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentPinConfirmButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:enabled="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/fragment_payment_pin_loading_button"
+        app:backgroundTint="@color/disabledLightGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

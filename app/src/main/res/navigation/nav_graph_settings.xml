@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_settings"
+    app:startDestination="@id/navigation_settings_pin">
+    <fragment
+        android:id="@+id/navigation_settings_pin"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsPinFragment"
+        android:label="fragment_settings_pin"
+        tools:layout="@layout/fragment_settings_pin">
+        <argument
+            android:name="state"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="paymentAddress"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="invoiceName"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_settings_pin_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+        <action
+            android:id="@+id/action_navigation_settings_pin_to_navigation_settings_updated"
+            app:destination="@id/navigation_settings_updated"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+        <action
+            android:id="@+id/action_navigation_settings_pin_to_navigation_settings_pop"
+            app:popUpTo="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_settings_user_understanding"
+            app:destination="@id/navigation_settings_user_understanding"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left">
+            <argument
+                android:name="chosenSetting"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_settings_settings_obtain_address"
+            app:destination="@id/navigation_settings_obtain_address"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings_user_understanding"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsUserUnderstandingFragment"
+        android:label="fragment_settings_user_understanding"
+        tools:layout="@layout/fragment_settings_user_understanding">
+        <argument
+            android:name="chosenSetting"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_settings_user_understanding_to_navigation_settings_change_pay_to_address"
+            app:destination="@id/navigation_settings_change_pay_to_address"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+        <action
+            android:id="@+id/action_navigation_settings_user_understanding_to_navigation_settings_change_invoice_name"
+            app:destination="@id/navigation_settings_change_invoice_name"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+        <action
+            android:id="@+id/action_navigation_settings_user_understanding_to_navigation_settings_change_master_pin"
+            app:destination="@id/navigation_settings_change_master_pin"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings_change_pay_to_address"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsChangePayToAddressFragment"
+        android:label="fragment_settings_change_pay_to_address"
+        tools:layout="@layout/fragment_settings_change_pay_to_address">
+        <action
+            android:id="@+id/action_navigation_settings_change_pay_to_address_to_navigation_settings_confirm_master_pin"
+            app:destination="@id/navigation_settings_pin"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left">
+            <argument
+                android:name="state"
+                app:argType="integer" />
+            <argument
+                android:name="paymentAddress"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_settings_change_pay_to_address_to_navigation_settings"
+            app:popUpTo="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings_change_invoice_name"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsChangeInvoiceNameFragment"
+        android:label="fragment_settings_change_invoice_name"
+        tools:layout="@layout/fragment_settings_change_invoice_name">
+        <action
+            android:id="@+id/action_navigation_settings_change_invoice_name_to_navigation_settings_confirm_master_pin"
+            app:destination="@id/navigation_settings_pin"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left">
+            <argument
+                android:name="state"
+                app:argType="integer" />
+            <argument
+                android:name="invoiceName"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_settings_change_invoice_name_to_address_to_navigation_settings"
+            app:popUpTo="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings_change_master_pin"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsChangeMasterPinFragment"
+        android:label="fragment_settings_master_pin"
+        tools:layout="@layout/fragment_settings_change_master_pin">
+        <action
+            android:id="@+id/action_navigation_settings_change_master_pin_to_navigation_settings_updated"
+            app:destination="@id/navigation_settings_updated"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_from_right"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_from_left" />
+        <action
+            android:id="@+id/action_navigation_settings_change_master_pin_to_navigation_settings"
+            app:popUpTo="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings_obtain_address"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.obtainaddress.SettingsObtainAddressFragment"
+        android:label="fragment_settings_obtain_address"
+        tools:layout="@layout/fragment_settings_obtain_address" />
+    <fragment
+        android:id="@+id/navigation_settings_updated"
+        android:name="com.radixdlt.android.apps.pos.ui.settings.fragment.SettingsUpdatedFragment"
+        android:label="fragment_settings_updated"
+        tools:layout="@layout/fragment_settings_updated">
+        <action
+            android:id="@+id/action_navigation_settings_updated_to_navigation_settings"
+            app:popUpTo="@id/navigation_settings" />
+    </fragment>
+
+</navigation>

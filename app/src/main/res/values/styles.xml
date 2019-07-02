@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashThemeDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="colorControlHighlight">@color/notVeryLightGray</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Dark" />
+
+    <style name="AppThemeDialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/blue66KeyboardBorder</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:colorBackground">@color/colorPrimaryDark</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AppThemePositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AppThemeNegativeButtonStyle</item>
+    </style>
+
+    <style name="AppThemeDialogLight" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorPrimary">@color/notVeryLightGray</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AppThemePositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AppThemeNegativeButtonStyle</item>
+    </style>
+
+    <style name="AppThemePositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/lightRed</item>
+        <item name="rippleColor">@color/lightRed</item>
+    </style>
+
+    <style name="AppThemeNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="rippleColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/veryLightGray</item>
+    </style>
+
+    <style name="RippleBackground">
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
+
+    <style name="CustomSwitchStyle" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <!-- do here for additional customisation on thumb, track background,text appearance -->
+    </style>
+
+    <style name="CustomSwitchTheme" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="switchStyle">@style/CustomSwitchStyle</item>
+        <item name="colorControlActivated">@color/radixGreen</item>
+        <item name="colorSwitchThumbNormal">@color/disabledLightGray</item>
+        <item name="trackTint">@color/track_selector</item>
+    </style>
+</resources>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:keypad="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.payment.activity.PaymentActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentInputAmountTextView"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/materialDarkGrey"
+        android:textSize="46sp"
+        app:autoSizeMaxTextSize="46sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/paymentInputAmountInvisibleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="$0.00" />
+
+    <com.radixdlt.android.apps.pos.ui.view.edittext.BackPressedEditText
+        android:id="@+id/paymentInputAmountReferenceEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="@string/fragment_payment_input_amount_description_hint"
+        android:inputType="textCapSentences"
+        android:textColor="@color/radixGreen"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInputAmountInvisibleView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentInputAmountTotalTextView"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/materialDarkGrey"
+        android:textSize="18sp"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInputAmountReferenceEditText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentInputAmountClearTotalButton"
+        style="@style/ClearTotalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:text="@string/fragment_payment_input_amount_clear_total_button"
+        android:textSize="13sp"
+        app:backgroundTint="@color/lightRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentInputAmountTotalTextView" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/totalGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="paymentInputAmountTotalTextView, paymentInputAmountClearTotalButton" />
+
+    <View
+        android:id="@+id/paymentInputAmountInvisibleView"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/paymentInputAmountKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paymentInputAmountThirtyThreeGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentInputAmountAddButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:text="@string/fragment_payment_input_amount_add_button"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/paymentInputAmountThirtyThreeGuideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.radixdlt.android.apps.pos.ui.view.keypad.KeyPadView
+        android:id="@+id/paymentInputAmountKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentInputAmountChargeButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        keypad:keypad_background_resource="@drawable/keypad_white_pressed_ripple"
+        keypad:keypad_decimal="."
+        keypad:keypad_grid_background_color="@color/disabledLightGray"
+        keypad:keypad_grid_line_thickness="1dp"
+        keypad:keypad_grid_visible="true"
+        keypad:keypad_image_resource="@drawable/ic_backspace_black"
+        keypad:keypad_text_color="@color/materialDarkGrey"
+        keypad:keypad_text_limit="10"
+        keypad:keypad_text_size="12sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentInputAmountChargeButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:enabled="false"
+        android:text="@string/fragment_payment_input_amount_charge_button"
+        app:backgroundTint="@color/disabledLightGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/paymentInputAmountThirtyThreeGuideline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

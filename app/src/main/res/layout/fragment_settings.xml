@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ui.settings.SettingsActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/settingsAddressAndNameCardView"
+        style="@style/AppCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settingsPaymentAddressLayout"
+                style="@style/RippleBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/settingsPaymentAddressLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:drawableStart="@drawable/ic_payment_address"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/settings_fragment_payment_address_xml"
+                    android:textColor="@color/materialGrey800"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/settingsPaymentAddressTextView"
+                    android:layout_width="130dp"
+                    android:layout_height="56dp"
+                    android:drawableEnd="@drawable/ic_icon_arrow_2_line"
+                    android:drawablePadding="16dp"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="dfddfdfdfdfdfdfdfdfjPYfe" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ff9b9b9b" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settingsInvoiceNameLayout"
+                style="@style/RippleBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/settingsInvoiceNameLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:drawableStart="@drawable/ic_invoice_name"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/settings_fragment_invoice_name_xml"
+                    android:textColor="@color/materialGrey800"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/settingsInvoiceNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:drawableEnd="@drawable/ic_icon_arrow_2_line"
+                    android:drawablePadding="16dp"
+                    android:gravity="center|end"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="NAME" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/settingsMasterPinCardView"
+        style="@style/AppCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsAddressAndNameCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsMasterPinLayout"
+            style="@style/RippleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/settingsMasterPinLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:drawableStart="@drawable/ic_master_pin"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/settings_fragment_master_pin_xml"
+                android:textColor="@color/materialGrey800"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/masterPinTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:drawableEnd="@drawable/ic_icon_arrow_2_line"
+                android:drawablePadding="16dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/radix_pos_common_pin_four_asterisk"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/settingsObtainAddressCardView"
+        style="@style/AppCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsMasterPinCardView">
+
+        <TextView
+            android:id="@+id/settingsObtainAddressTextView"
+            style="@style/RippleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:drawableEnd="@drawable/ic_icon_arrow_2_line"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/settings_fragment_obtain_address_from_card_xml"
+            android:textColor="@color/materialGrey800"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/settingsResetAppCardView"
+        style="@style/AppCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsObtainAddressCardView">
+
+        <TextView
+            android:id="@+id/resetAppTextView"
+            style="@style/RippleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/settings_fragment_reset_app_xml"
+            android:textColor="@color/materialGrey800"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

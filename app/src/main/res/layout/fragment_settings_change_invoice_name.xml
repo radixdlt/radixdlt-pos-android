@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.setup.activity.SetupActivity">
+
+    <ScrollView
+        android:id="@+id/settingsChangeInvoiceNameScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/settingsChangeInvoiceNameContinueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/settingsChangeInvoiceNameTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/settings_change_invoice_name_fragment_title"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                app:layout_constraintBottom_toTopOf="@+id/settingsChangeInvoiceNameDescriptionTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.20" />
+
+            <TextView
+                android:id="@+id/settingsChangeInvoiceNameDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/settings_change_invoice_name_fragment_current_name"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/settingsChangeInvoiceNameEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsChangeInvoiceNameTitleTextView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.radixdlt.android.apps.pos.ui.view.edittext.BackPressedEditText
+                android:id="@+id/settingsChangeInvoiceNameEditText"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsChangeInvoiceNameDescriptionTextView"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="Autofill,LabelFor"
+                tools:text="MERCHANT" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/settingsChangeInvoiceNameThirtyThreeGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsChangeInvoiceNameBackButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:text="@string/radix_pos_common_back_button_xml"
+        app:backgroundTint="@color/mustardYellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/settingsChangeInvoiceNameThirtyThreeGuideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settingsChangeInvoiceNameContinueButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:text="@string/radix_pos_common_continue_button_xml"
+        app:backgroundTint="@color/disabledLightGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/settingsChangeInvoiceNameThirtyThreeGuideline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

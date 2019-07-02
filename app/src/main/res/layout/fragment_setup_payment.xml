@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setupPaymentRootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.setup.activity.SetupActivity">
+
+    <ScrollView
+        android:id="@+id/setupPaymentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/setupPaymentAddressScanAddressButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:id="@+id/setupPaymentAddressTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/setup_payment_address_fragment_title_xml"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/setupPaymentAddressDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/setup_payment_address_fragment_description_xml"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setupPaymentAddressTitleTextView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.radixdlt.android.apps.pos.ui.view.edittext.BackPressedEditText
+                android:id="@+id/setupPaymentAddressEditText"
+                android:layout_width="0dp"
+                android:layout_height="155dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:paddingStart="46dp"
+                android:paddingEnd="46dp"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setupPaymentAddressDescriptionTextView"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="Autofill,LabelFor"
+                tools:text="9hHJNejFjuKe3YiDHoik5MyeAvEEoPrTJdEof5twNrQLEijPYfe" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/setupPaymentNoKeyboardGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="setupPaymentAddressPasteAddressButton, setupPaymentAddressScanAddressButton, setupPaymentAddressCenterGuideline" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/setupPaymentKeyboardVisibleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="setupPaymentAddressBackButton, setupPaymentAddressTypeAddressContinueButton, setupPaymentAddressThirtyThreeGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/setupPaymentAddressCenterGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/setupPaymentAddressThirtyThreeGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupPaymentAddressScanAddressButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="26dp"
+        android:text="@string/setup_payment_address_fragment_scan_button_xml"
+        app:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_camera"
+        app:iconPadding="0dp"
+        app:iconSize="36dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/setupPaymentAddressCenterGuideline" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupPaymentAddressPasteAddressButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="0dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="26dp"
+        android:text="@string/setup_payment_address_fragment_paste_button_xml"
+        app:backgroundTint="@color/mustardYellow"
+        app:icon="@drawable/ic_paste"
+        app:iconPadding="0dp"
+        app:iconSize="36dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/setupPaymentAddressCenterGuideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupPaymentAddressBackButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="@string/setup_payment_address_fragment_back_button_xml"
+        app:backgroundTint="@color/mustardYellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/setupPaymentAddressThirtyThreeGuideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupPaymentAddressContinueButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="@string/setup_payment_address_fragment_continue_button_xml"
+        android:visibility="gone"
+        app:backgroundTint="@color/radixGreen"
+        app:layout_constraintBottom_toTopOf="@+id/setupPaymentAddressPasteAddressButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/setupPaymentAddressTypeAddressContinueButton"
+        style="@style/POSButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:text="@string/setup_payment_address_fragment_typed_continue_button_xml"
+        app:backgroundTint="@color/disabledLightGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/setupPaymentAddressThirtyThreeGuideline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

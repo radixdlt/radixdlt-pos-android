@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.payment.activity.PaymentActivity">
+
+    <TextView
+        android:id="@+id/paymentStartBusinessNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/fragment_payment_start_business_name"
+        android:textColor="@color/materialGrey900"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/paymentStartInvisibleCentreView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.00" />
+
+    <TextView
+        android:id="@+id/paymentStartAcceptedHereTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/fragment_payment_start_accepted_here"
+        android:textColor="@color/materialGrey900"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentStartInvisibleCentreView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/paymentStartInvisibleCentreView"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/paymentStartStartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/paymentStartNoNetworkDetectedErrorTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/fragment_payment_start_no_network_connection"
+        android:textColor="@color/lightRed"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/paymentStartPoweredByRadixImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/paymentStartPoweredByRadixImageView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/fragment_payment_start_powered_by_radix_logo_content_description"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_radix_logo"
+        app:layout_constraintBottom_toTopOf="@+id/paymentStartStartButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.90" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentStartStartButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/fragment_payment_start_start_button"
+        app:backgroundTint="@color/radixGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

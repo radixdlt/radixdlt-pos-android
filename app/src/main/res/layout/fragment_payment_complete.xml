@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.payment.activity.PaymentActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentCompleteAmountPayedTextView"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/materialDarkGrey"
+        android:textSize="40sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="$ 609,59" />
+
+    <TextView
+        android:id="@+id/paymentCompleteTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/fragment_payment_complete_payment_complete"
+        android:textColor="@color/radixGreen"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentCompleteAmountPayedTextView" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/paymentCompleteSuccessAnimationView"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentCompleteFinishButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentCompleteTextView"
+        app:layout_constraintVertical_bias="0.50"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/success" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paymentCompleteThirtyThreeGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentCompleteFinishButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/fragment_payment_complete_finish_button"
+        app:backgroundTint="@color/radixGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

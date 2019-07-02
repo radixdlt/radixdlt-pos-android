@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#809EDC</color>
+    <color name="colorPrimaryDark">#32364E</color>
+    <color name="colorAccent">#6C42FB</color>
+    <color name="radixGreen">#3ECF8E</color>
+    <color name="radixGreen60Alpha">#993ECF8E</color>
+    <color name="disabledLightGray">#A3ADB7</color>
+    <color name="disabledLightGray60Alpha">#99A3ADB7</color>
+    <color name="blueKeyboardBorder">#525F7F</color>
+    <color name="blue66KeyboardBorder">#A8525F7F</color>
+    <color name="white66KeyboardBorder">#A8A3ADB7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="rippleWhite">#33FFFFFF</color>
+    <color name="continueDisabled">#929DA8</color>
+    <color name="notQuiteWhite">#FEFEFE</color>
+    <color name="notQuiteWhiteAlpha">#a0fefefe</color>
+    <color name="notVeryLightGray">#bfbfbf</color>
+    <color name="veryLightGray">#dfdfdf</color>
+    <color name="materialGrey800">#535353</color>
+    <color name="materialDarkGrey">#3B3B3B</color>
+    <color name="materialGrey900">#212121</color>
+    <color name="lightRed">#ff6861</color>
+    <color name="darkerRed">#FF251B</color>
+    <color name="mustardYellow">#F0B632</color>
+    <color name="setupBackground">#26283D</color>
+</resources>

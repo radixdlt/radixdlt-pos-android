@@ -1,0 +1,176 @@
+<resources>
+    <!-- QR camera reader -->
+    <string name="permission_camera_rationale">Access to the camera is needed to scan QR code</string>
+    <string name="no_camera_permission">The QR code scanner cannot run because it does not have the camera permission.</string>
+    <string name="low_storage_error">Dependencies cannot be downloaded due to low device storage</string>
+
+    <string name="barcode_success">Barcode read successfully</string>
+    <string name="barcode_failure">No QR code read</string>
+    <string name="barcode_error">Error reading barcode: %1$s</string>
+
+    <string name="toast_error_reading_qr_code">Error reading QR code</string>
+
+    <!-- SetupWelcomeFragment -->
+    <string name="setup_welcome_fragment_welcome_title_xml">WELCOME</string>
+    <string name="setup_welcome_fragment_new_master_pin_title_xml">NEW MASTER PIN</string>
+    <string name="setup_welcome_fragment_notice_text_xml">To secure your Point of Sale device you must set a Master Pin on the next page.\n\nThe Master Pin will allow you to change the app settings, including the pay-to address.\n\nTo secure your funds must keep this Master Pin safe.</string>
+
+    <!-- SetupPinFragment -->
+    <string name="setup_pin_fragment_set_pin_header">SET PIN:</string>
+    <string name="setup_pin_fragment_confirm_pin_header">CONFIRM PIN:</string>
+    <string name="setup_pin_fragment_pin_does_not_match">Pin does not match. Try again!</string>
+
+    <!-- SetupPaymentAddressFragment -->
+    <string name="setup_payment_address_fragment_title_xml">PAYMENT</string>
+    <string name="setup_payment_address_fragment_description_xml">What payment address would  you like your Point of Sale  payments to be sent to?</string>
+    <string name="setup_payment_address_fragment_scan_button_xml">Scan Address</string>
+    <string name="setup_payment_address_fragment_paste_button_xml">Paste Address</string>
+    <string name="setup_payment_address_fragment_back_button_xml">Back</string>
+    <string name="setup_payment_address_fragment_continue_button_xml">Continue</string>
+    <string name="setup_payment_address_fragment_typed_continue_button_xml">Continue</string>
+    <string name="setup_payment_address_fragment_not_a_radix_address_toast">Please scan a QR code with a valid Radix address</string>
+
+    <!-- SetupInvoiceNameFragment -->
+    <string name="setup_invoice_name_fragment_title_xml">BUSINESS</string>
+    <string name="setup_invoice_name_fragment_description_xml">What name would you like to appear on your customer\'s transactions?</string>
+    <string name="setup_invoice_name_fragment_back_button_xml">Back</string>
+    <string name="setup_invoice_name_fragment_continue_button_xml">Continue</string>
+
+    <!-- SetupCompleteFragment -->
+    <string name="setup_complete_fragment_title_xml">SETUP COMPLETE</string>
+    <string name="setup_complete_fragment_finish_button_xml">FINISH</string>
+
+    <!-- SetupQuitDialogFragment -->
+    <string name="setup_quit_dialog_fragment_title">Quit POS setup?</string>
+    <string name="setup_quit_dialog_fragment_message">You haven\'t finished the setup process.\n\nAre you sure you want to quit?</string>
+    <string name="setup_quit_dialog_fragment_quit_button">Quit</string>
+    <string name="setup_quit_dialog_fragment_no_button">No</string>
+
+    <!-- SETTINGS -->
+    <string name="settings_activity_title_toolbar">SETTINGS</string>
+
+    <!-- SettingsPinFragment -->
+    <string name="settings_pin_fragment_incorrect_pin">Incorrect pin, try again!</string>
+    <string name="settings_pin_fragment_enter_pin_xml">ENTER PIN:</string>
+
+    <!-- SettingsFragment -->
+    <string name="settings_fragment_payment_address_xml">Payment Address</string>
+    <string name="settings_fragment_invoice_name_xml">Invoice Name</string>
+    <string name="settings_fragment_master_pin_xml">Master Pin</string>
+    <string name="settings_fragment_obtain_address_from_card_xml">Obtain address from card</string>
+    <string name="settings_fragment_reset_app_xml">Reset App</string>
+
+    <!-- SettingsUserUnderstandingFragment -->
+    <string name="settings_user_understand_fragment_payment_address_title">CHANGE\nPAY-TO\nADDRESS</string>
+    <string name="settings_user_understand_fragment_payment_address_content_title">NEW PAY-TO ADDRESS</string>
+    <string name="settings_user_understand_fragment_payment_address_content_description">This field changes the clearing destination of any payments that are made via this Point of Sale terminal.\n\nChanging this address will change where customer payments are sent.</string>
+    <string name="settings_user_understand_fragment_invoice_name_title">CHANGE\nINVOICE\nNAME</string>
+    <string name="settings_user_understand_fragment_invoice_name_content_title">NEW BUSINESS NAME</string>
+    <string name="settings_user_understand_fragment_invoice_name_content_description">This field changes the name of the business that appears to customers for transactions processed via this device.\n\nChanging this name will change what a customer will see on their transaction history.</string>
+    <string name="settings_user_understand_fragment_master_pin_title">CHANGE\nMASTER\nPIN</string>
+    <string name="settings_user_understand_fragment_master_pin_content_title">NEW MASTER PIN</string>
+    <string name="settings_user_understand_fragment_master_pin_content_description">The Master Pin allows you to change the app settings, including the pay-to address.\n\nTo secure your funds, you must keep this Master Pin safe.</string>
+
+    <!-- SettingsObtainAddressFragment -->
+    <string name="settings_obtain_address_title_xml">TAP CARD\nTO\nREAD\nADDRESS</string>
+
+    <!-- SettingsUpdatedFragment -->
+    <string name="settings_updated_fragment_title_xml">SETTINGS UPDATED</string>
+
+    <!-- SettingsChangePayToAddressFragment -->
+    <string name="settings_change_pay_to_address_title_xml">ADDRESS</string>
+    <string name="settings_change_pay_to_address_current_address">Your current address is:</string>
+    <string name="settings_change_pay_to_address_new_address">Your new address is:</string>
+    <string name="settings_change_pay_to_address_enter_address">Enter a new address:</string>
+    <string name="settings_change_pay_to_address_scan_button_xml">Scan Address</string>
+    <string name="settings_change_pay_to_address_paste_button_xml">Paste Address</string>
+    <string name="settings_change_pay_to_address_back_button_xml">Back</string>
+    <string name="settings_change_pay_to_address_continue_button_xml">Continue</string>
+    <string name="settings_change_pay_to_address_typed_continue_button_xml">Continue</string>
+    <string name="settings_change_pay_to_address_not_a_radix_address_toast">Please scan a QR code with a valid Radix address</string>
+
+    <!-- SettingsChangeMasterPinFragment -->
+    <string name="settings_change_master_pin_fragment_old_pin">OLD PIN:</string>
+    <string name="settings_change_master_pin_fragment_new_pin">NEW PIN:</string>
+    <string name="settings_change_master_pin_fragment_confirm_pin">CONFIRM PIN:</string>
+    <string name="settings_change_master_pin_fragment_incorrect_pin">Incorrect pin, try again!</string>
+    <string name="settings_change_master_pin_fragment_pin_not_match">Pin does not match, try again!</string>
+
+    <!-- SettingsChangeInvoiceNameFragment -->
+    <string name="settings_change_invoice_name_fragment_title">INVOICE NAME</string>
+    <string name="settings_change_invoice_name_fragment_current_name">The name on customer\ntransactions is currently:</string>
+    <string name="settings_change_invoice_name_fragment_enter_new_name">Enter a new name:</string>
+    <string name="settings_change_invoice_name_fragment_new_name_to_be">The new name on customer\ntransactions will be:</string>
+
+    <!-- PaymentStartFragment -->
+    <string name="fragment_payment_start_business_name">RADIX\nPAY</string>
+    <string name="fragment_payment_start_accepted_here">ACCEPTED HERE</string>
+    <string name="fragment_payment_start_powered_by_radix_logo_content_description">Powered by Radix logo</string>
+    <string name="fragment_payment_start_start_button">START</string>
+    <string name="fragment_payment_start_no_network_connection">No network connection!</string>
+
+    <!-- PaymentTapScanFragment -->
+    <string name="fragment_payment_tap_scan_tap_to_start">TAP TO START</string>
+    <string name="fragment_payment_tap_scan_scan_to_pay">SCAN TO PAY</string>
+    <string name="fragment_payment_tap_scan_contactless_qr_code_image_content_description">QR code</string>
+    <string name="fragment_payment_tap_scan_cancel_transaction_button">Cancel Transaction</string>
+    <string name="fragment_payment_tap_scan_try_again_toast">Tapped too quickly,\ntry again!</string>
+
+    <!-- PaymentPinFragment -->
+    <string name="fragment_payment_pin_enter_pin">ENTER PIN:</string>
+    <string name="fragment_payment_pin_confirm">CONFIRM</string>
+    <string name="fragment_payment_pin_loading_button">LOADING…</string>
+    <string name="fragment_payment_pin_two_attempts_remaining_error">Wrong pin, 2 attempts remaining</string>
+    <string name="fragment_payment_pin_one_attempt_remaining_error">WARNING! 1 attempt remaining</string>
+
+    <!-- PaymentInputAmountFragment -->
+    <string name="fragment_payment_input_amount_description_hint">Add description</string>
+    <string name="fragment_payment_input_amount_clear_total_button">clear total</string>
+    <string name="fragment_payment_input_amount_add_button">Add</string>
+    <string name="fragment_payment_input_amount_charge_button">Charge</string>
+    <string name="fragment_payment_input_amount_reference">Reference: %1$s</string>
+    <string name="fragment_payment_input_amount_reference_description">Reference: %1$s Description: %2$s</string>
+
+    <!-- PaymentCompleteFragment -->
+    <string name="fragment_payment_complete_payment_complete">PAYMENT COMPLETE</string>
+    <string name="fragment_payment_complete_finish_button">FINISH</string>
+
+    <!-- PaymentCardErrorFragment -->
+    <string name="fragment_payment_card_error_cancel_transaction_button">CANCEL TRANSACTION</string>
+    <string name="fragment_payment_card_error_use_another_card_button">USE ANOTHER CARD</string>
+
+    <!-- PaymentCancelledFragment -->
+    <string name="fragment_payment_cancelled_finish_button">FINISH</string>
+    <string name="fragment_payment_cancelled_transaction_cancelled">TRANSACTION CANCELLED</string>
+    <string name="fragment_payment_card_error_card_blocked">CARD BLOCKED</string>
+    <string name="fragment_payment_card_error_insufficient_funds">INSUFFICIENT FUNDS</string>
+
+    <!-- PaymentTapToPayFragment -->
+    <string name="fragment_payment_tap_to_pay_title">TAP TO PAY</string>
+    <string name="fragment_payment_tap_to_pay_processing_button">PROCESSING…</string>
+    <string name="fragment_payment_tap_to_pay_tapped_too_quick_try_again_message">Tapped too quickly,\ntry again!</string>
+    <string name="fragment_payment_tap_to_pay_error_submitting_try_again_message">There was an error,\ntry again!</string>
+
+    <!-- PaymentCancelDialogFragment -->
+    <string name="dialog_fragment_payment_cancel_title">Cancel payment?</string>
+    <string name="dialog_fragment_payment_cancel_message">Are you sure you want to cancel your payment?</string>
+    <string name="dialog_fragment_payment_cancel_cancel_button">Cancel</string>
+    <string name="dialog_fragment_payment_cancel_no_button">No</string>
+
+    <!-- DelayedProgressDialog -->
+    <string name="progress_dialog_reset_data_resetting_data">Resetting data…</string>
+
+    <!-- COMMON -->
+    <string name="radix_pos_common_i_understand_switch_xml">I UNDERSTAND</string>
+    <string name="radix_pos_common_continue_button_xml">CONTINUE</string>
+    <string name="radix_pos_common_start_button_xml">START</string>
+    <string name="radix_pos_common_detecting_button_xml">DETECTING…</string>
+    <string name="radix_pos_common_finish_button_xml">FINISH</string>
+    <string name="radix_pos_common_pin_one_asterisk">*</string>
+    <string name="radix_pos_common_pin_two_asterisk">**</string>
+    <string name="radix_pos_common_pin_three_asterisk">***</string>
+    <string name="radix_pos_common_pin_four_asterisk">****</string>
+    <string name="radix_pos_common_back_button_xml">Back</string>
+    <string name="radix_pos_common_contactless_payment_image_content_description">Contactless payment image</string>
+    <string name="radix_pos_common_no_network_connection_tap_again_toast">No network connection! Tap card again when connected</string>
+</resources>

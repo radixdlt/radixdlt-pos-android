@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_payment"
+    app:startDestination="@id/navigation_payment_start">
+    <fragment
+        android:id="@+id/navigation_payment_start"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentStartFragment"
+        android:label="fragment_payment_start"
+        tools:layout="@layout/fragment_payment_start">
+        <action
+            android:id="@+id/action_navigation_payment_start_to_navigation_payment_input_amount"
+            app:destination="@id/navigation_payment_input_amount" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_input_amount"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentInputAmountFragment"
+        android:label="fragment_payment_input_amount"
+        tools:layout="@layout/fragment_payment_input_amount">
+        <action
+            android:id="@+id/action_navigation_payment_input_amount_to_navigation_payment_tap_scan"
+            app:destination="@id/navigation_payment_tap_scan">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_tap_scan"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.tapscan.PaymentTapScanFragment"
+        android:label="fragment_payment_tap_scan"
+        tools:layout="@layout/fragment_payment_tap_scan">
+        <argument
+            android:name="amount"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_tap_scan_to_navigation_payment_pin"
+            app:destination="@id/navigation_payment_pin">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="publicKey"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_payment_tap_scan_to_navigation_payment_cancelled"
+            app:destination="@id/navigation_payment_cancelled" />
+        <action
+            android:id="@+id/action_navigation_payment_tap_scan_to_navigation_payment_complete"
+            app:destination="@id/navigation_payment_complete">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_pin"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.pin.PaymentPinFragment"
+        android:label="fragment_payment_pin"
+        tools:layout="@layout/fragment_payment_pin">
+        <argument
+            android:name="amount"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="publicKey"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_pin_to_navigation_payment_tap_to_pay"
+            app:destination="@id/navigation_payment_tap_to_pay">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="pin"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="publicKey"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_payment_pin_to_navigation_payment_card_error"
+            app:destination="@id/navigation_payment_card_error">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="cardBlocked"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_tap_to_pay"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.taptopay.PaymentTapToPayFragment"
+        android:label="fragment_payment_tap_to_pay"
+        tools:layout="@layout/fragment_payment_tap_to_pay">
+        <argument
+            android:name="amount"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="pin"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="publicKey"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_tap_to_pay_to_navigation_payment_complete"
+            app:destination="@id/navigation_payment_complete" />
+        <action
+            android:id="@+id/action_navigation_payment_tap_to_pay_to_navigation_payment_card_error"
+            app:destination="@id/navigation_payment_card_error" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_complete"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentCompleteFragment"
+        android:label="fragment_payment_complete"
+        tools:layout="@layout/fragment_payment_complete">
+        <argument
+            android:name="amount"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_complete_to_navigation_payment_start"
+            app:popUpTo="@id/navigation_payment_start" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_cancelled"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentCancelledFragment"
+        android:label="fragment_payment_cancelled"
+        tools:layout="@layout/fragment_payment_cancelled">
+        <action
+            android:id="@+id/action_navigation_payment_cancelled_to_navigation_payment_start"
+            app:popUpTo="@id/navigation_payment_start" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_card_error"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentCardErrorFragment"
+        android:label="fragment_payment_card_error"
+        tools:layout="@layout/fragment_payment_card_error">
+        <argument
+            android:name="amount"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="cardBlocked"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_navigation_payment_card_error_to_navigation_payment_tap_scan"
+            app:destination="@id/navigation_payment_tap_scan"
+            app:popUpTo="@id/navigation_payment_start">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_payment_card_error_to_navigation_payment_cancelled"
+            app:destination="@id/navigation_payment_cancelled" />
+    </fragment>
+    <dialog
+        android:id="@+id/navigation_payment_cancel"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.dialog.PaymentCancelDialogFragment"
+        android:label="dialog_payment_cancel" />
+</navigation>

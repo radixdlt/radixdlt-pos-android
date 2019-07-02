@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:keypad="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ui.setup.activity.SetupActivity">
+
+    <TextView
+        android:id="@+id/setupTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/setupPinInvisibleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.00"
+        tools:text="@string/setup_pin_fragment_set_pin_header" />
+
+    <TextView
+        android:id="@+id/setupPinDisabledTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:letterSpacing="0.75"
+        android:text="@string/radix_pos_common_pin_four_asterisk"
+        android:textColor="@color/notQuiteWhiteAlpha"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/setupPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setupPinInvisibleView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/setupPinTextView"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:letterSpacing="0.75"
+        android:text=""
+        android:textColor="@color/radixGreen"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@+id/setupPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setupPinInvisibleView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/setupPinErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:textColor="@color/lightRed"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/setupPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setupPinTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Pin error" />
+
+    <View
+        android:id="@+id/setupPinInvisibleView"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/setupPinKeypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <com.radixdlt.android.apps.pos.ui.view.keypad.KeyPadView
+        android:id="@+id/setupPinKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        keypad:keypad_background_resource="@drawable/keypad_blue_pressed_ripple"
+        keypad:keypad_clear_image_resource="@drawable/ic_close_keypad"
+        keypad:keypad_grid_background_color="@color/blueKeyboardBorder"
+        keypad:keypad_grid_line_thickness="1dp"
+        keypad:keypad_grid_visible="true"
+        keypad:keypad_image_resource="@drawable/ic_backspace_white"
+        keypad:keypad_text_color="@color/white"
+        keypad:keypad_text_limit="4"
+        keypad:keypad_text_size="12sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
