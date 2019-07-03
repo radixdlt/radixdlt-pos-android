@@ -36,7 +36,7 @@ The current implementation of the POS app is currently developed to listen to on
 This means that if a token has been created in the radix universe and this is the token that we want to accept,
 this must be set in the [Constants.kt](https://github.com/radixdlt/radixdlt-pos-android/blob/master/app/src/main/java/com/radixdlt/android/apps/pos/util/Constants.kt) file for both the `TOKEN_REFERENCE_ADDRESS` and `TOKEN_REFERENCE_SYMBOL` constants.
 
-`const val TOKEN_REFERENCE_ADDRESS = “JGPU2M7Wss6C3TjAtt3BaLESHGoWWCb5sKw5eQdsfHVk3CuPjpf”`
+`const val TOKEN_REFERENCE_ADDRESS = “JGPU2M7Wss6C3TjAtt3BaLESHGoWWCb5sKw5eQdsfHVk3CuPjpf”`  
 `const val TOKEN_REFERENCE_SYMBOL = “USD”`
 
 ## Code style
