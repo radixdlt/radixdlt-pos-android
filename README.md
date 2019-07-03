@@ -32,6 +32,13 @@ In order to flash and use your own nfc cards, please see the [radixdlt-card-appl
 
 Cards and devices which will run this app *must* support extended length APDU format
 
+The current implementation of the POS app is currently developed to listen to one type of token.
+This means that if a token has been created in the radix universe and this is the token that we want to accept,
+this must be set in the [Constants.kt](https://github.com/radixdlt/radixdlt-pos-android/blob/master/app/src/main/java/com/radixdlt/android/apps/pos/util/Constants.kt) file for both the `TOKEN_REFERENCE_ADDRESS` and `TOKEN_REFERENCE_SYMBOL` constants.
+
+`const val TOKEN_REFERENCE_ADDRESS = “JGPU2M7Wss6C3TjAtt3BaLESHGoWWCb5sKw5eQdsfHVk3CuPjpf”`
+`const val TOKEN_REFERENCE_SYMBOL = “USD”`
+
 ## Code style
 
 This project uses [ktlint](https://github.com/pinterest/ktlint) via [Gradle](https://gradle.org/) dependency.
