@@ -44,22 +44,27 @@
         android:id="@+id/paymentCompleteSuccessAnimationView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        app:layout_constraintBottom_toTopOf="@+id/paymentCompleteFinishButton"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/paymentCompleteReceiptButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentCompleteTextView"
-        app:layout_constraintVertical_bias="0.50"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/success" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/paymentCompleteThirtyThreeGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/paymentCompleteReceiptButton"
+        style="@style/POSButtons"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/fragment_payment_complete_show_receipt_button"
+        app:backgroundTint="@color/mustardYellow"
+        app:layout_constraintBottom_toTopOf="@+id/paymentCompleteFinishButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/paymentCompleteFinishButton"

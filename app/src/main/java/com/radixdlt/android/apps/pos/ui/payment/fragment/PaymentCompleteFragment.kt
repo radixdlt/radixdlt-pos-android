@@ -17,6 +17,7 @@ class PaymentCompleteFragment : Fragment(), BackFragment {
 
     private val args: PaymentCompleteFragmentArgs by navArgs()
     private val amountText: String by lazy { args.amount ?: ZERO }
+    private val reference: String by lazy { args.reference ?: "" }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +29,7 @@ class PaymentCompleteFragment : Fragment(), BackFragment {
         super.onViewCreated(view, savedInstanceState)
         displayAmountPayed()
         playPaymentSuccessAnimation()
+        setShowReceiptOnClickListener()
         setFinishButtonOnClickListener()
     }
 
@@ -38,6 +40,14 @@ class PaymentCompleteFragment : Fragment(), BackFragment {
     private fun playPaymentSuccessAnimation() {
         paymentCompleteSuccessAnimationView.visibility = View.VISIBLE
         paymentCompleteSuccessAnimationView.playAnimation()
+    }
+
+    private fun setShowReceiptOnClickListener() {
+        paymentCompleteReceiptButton.setOnClickListener {
+            val action = PaymentCompleteFragmentDirections
+                .actionNavigationPaymentCompleteToNavigationPaymentReceipt(reference)
+            findNavController().navigate(action)
+        }
     }
 
     private fun setFinishButtonOnClickListener() {

@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_navigation_payment_start_to_navigation_payment_input_amount"
             app:destination="@id/navigation_payment_input_amount" />
+        <action
+            android:id="@+id/action_navigation_payment_start_to_navigation_payment_products_grid"
+            app:destination="@id/navigation_payment_products_grid" />
     </fragment>
     <fragment
         android:id="@+id/navigation_payment_input_amount"
@@ -20,6 +23,26 @@
         tools:layout="@layout/fragment_payment_input_amount">
         <action
             android:id="@+id/action_navigation_payment_input_amount_to_navigation_payment_tap_scan"
+            app:destination="@id/navigation_payment_tap_scan">
+            <argument
+                android:name="amount"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_products_grid"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.productselect.PaymentProductSelectFragment"
+        android:label="fragment_payment_products_grid"
+        tools:layout="@layout/fragment_payment_products_grid">
+        <action
+            android:id="@+id/action_navigation_payment_products_grid_to_navigation_payment_tap_scan"
             app:destination="@id/navigation_payment_tap_scan">
             <argument
                 android:name="amount"
@@ -185,8 +208,36 @@
             android:defaultValue="@null"
             app:argType="string"
             app:nullable="true" />
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_complete_to_navigation_payment_receipt"
+            app:destination="@id/navigation_payment_receipt">
+            <argument
+                android:name="reference"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
         <action
             android:id="@+id/action_navigation_payment_complete_to_navigation_payment_start"
+            app:popUpTo="@id/navigation_payment_start" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_payment_receipt"
+        android:name="com.radixdlt.android.apps.pos.ui.payment.fragment.PaymentReceiptFragment"
+        android:label="fragment_payment_receipt"
+        tools:layout="@layout/fragment_payment_receipt">
+        <argument
+            android:name="reference"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_payment_receipt_to_navigation_payment_start"
             app:popUpTo="@id/navigation_payment_start" />
     </fragment>
     <fragment

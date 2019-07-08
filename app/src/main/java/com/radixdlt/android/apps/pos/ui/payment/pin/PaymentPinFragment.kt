@@ -59,7 +59,9 @@ class PaymentPinFragment : BaseFragment() {
         paymentPinViewModel.paymentPinAtomBuildingState.observe(::getLifecycle, ::atomBuildingState)
         lifecycleScope.launch {
             delay(50)
-            paymentPinViewModel.buildAtom(publicKey, amount, reference)
+//            paymentPinViewModel.buildAtom(publicKey, amount, reference)
+            paymentPinViewModel.buildAtom2(publicKey, paymentViewModel.purchase)
+//            paymentPinViewModel.buildAtomForReceipt(publicKey, paymentViewModel.purchase)
         }
     }
 
@@ -67,12 +69,12 @@ class PaymentPinFragment : BaseFragment() {
         paymentPinConfirmButton.setOnClickListener {
             if (isInsufficientFunds) {
                 val action = PaymentPinFragmentDirections
-                    .actionNavigationPaymentPinToNavigationPaymentCardError(amount, reference = reference)
+                    .actionNavigationPaymentPinToNavigationPaymentCardError(paymentViewModel.purchase.costOfArticles().toString(), reference = reference)
                 findNavController().navigate(action)
                 return@setOnClickListener
             }
             val action = PaymentPinFragmentDirections
-                .actionNavigationPaymentPinToNavigationPaymentTapToPay(amount, reference, pinSet, publicKey)
+                .actionNavigationPaymentPinToNavigationPaymentTapToPay(paymentViewModel.purchase.costOfArticles().toString(), reference, pinSet, publicKey)
             findNavController().navigate(action)
             pinSet = ""
         }

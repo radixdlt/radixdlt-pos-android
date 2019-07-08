@@ -8,6 +8,7 @@ import com.radixdlt.android.apps.pos.util.TOKEN_REFERENCE_ADDRESS
 import com.radixdlt.android.apps.pos.util.TOKEN_REFERENCE_SYMBOL
 import com.radixdlt.android.apps.pos.util.VaultPreferences
 import com.radixdlt.client.application.identity.Data
+import com.radixdlt.client.application.translate.data.receipt.Purchase
 import com.radixdlt.client.application.translate.tokens.InsufficientFundsException
 import com.radixdlt.client.application.translate.tokens.TransferTokensAction
 import com.radixdlt.client.atommodel.accounts.RadixAddress
@@ -70,6 +71,60 @@ class PaymentPinViewModel : ViewModel() {
                 errorBuildingAtom(t)
             }
         }.addTo(compositeDisposable)
+    }
+
+    fun buildAtom2(publicKey: String, purchase: Purchase) {
+        var amount = purchase.costOfArticles().toString()
+        if (amount.contains(",")) {
+            amount = amount.replace(",", ".")
+        }
+
+        val ecPublicKey = ECPublicKey(Hex.decode(publicKey))
+        val radixAddress = radixApplicationAPI.getAddress(ecPublicKey)
+
+        radixApplicationAPI
+            .pullOnce(radixAddress)
+            .subscribeOn(Schedulers.io())
+            .subscribe {
+                val transaction = radixApplicationAPI.createTransaction()
+
+                try {
+                    transaction.stage(TransferTokensAction.create(
+                        RRI.of(
+                            RadixAddress.from(TOKEN_REFERENCE_ADDRESS), TOKEN_REFERENCE_SYMBOL
+                        ),
+                        radixAddress,
+                        RadixAddress.from(VaultPreferences.getVaultPaymentAddress()),
+                        amount.toBigDecimal(),
+                        purchase.receipt.serializedJsonBytes
+                    ))
+                    builtAtom(transaction.buildAtom())
+                } catch (t: Throwable) {
+                    errorBuildingAtom(t)
+                }
+            }.addTo(compositeDisposable)
+    }
+
+    fun buildAtomForReceipt(publicKey: String, purchase: Purchase) {
+        val ecPublicKey = ECPublicKey(Hex.decode(publicKey))
+        val radixAddress = radixApplicationAPI.getAddress(ecPublicKey)
+
+        radixApplicationAPI
+            .pullOnce(radixAddress)
+            .subscribeOn(Schedulers.io())
+            .subscribe {
+                try {
+                    val unsignedAtom = radixApplicationAPI
+                        .buildAtomFromPurchase(
+                            purchase,
+                            RRI.of(RadixAddress.from(TOKEN_REFERENCE_ADDRESS), TOKEN_REFERENCE_SYMBOL),
+                            ecPublicKey
+                        )
+                    builtAtom(unsignedAtom)
+                } catch (t: Throwable) {
+                    errorBuildingAtom(t)
+                }
+            }.addTo(compositeDisposable)
     }
 
     private fun builtAtom(unsignedAtom: UnsignedAtom) {

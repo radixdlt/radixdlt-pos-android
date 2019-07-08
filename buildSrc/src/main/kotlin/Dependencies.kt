@@ -27,7 +27,8 @@ object AndroidSdk {
 object Libraries {
     private object Versions {
         const val ktlint = "0.33.0"
-        const val betanetRC = "rc~1.0.0-beta-SNAPSHOT" // Temporary RC branch will be moved to release/betanet branch
+        const val hackathon2Receipt = "hackathon2~receipt-SNAPSHOT"
+        const val commit = "a2f8f55"
         const val ankoCommons = "0.10.8"
         const val appCompat = "1.1.0-alpha05"
         const val constraintLayout = "2.0.0-beta1"
@@ -47,7 +48,7 @@ object Libraries {
 
     const val ktlint = "com.pinterest:ktlint:${Versions.ktlint}"
 
-    const val radixdltJava = "com.radixdlt:radixdlt-java:${Versions.betanetRC}"
+    const val radixdltJava = "com.radixdlt:radixdlt-java:${Versions.commit}"
 
     const val ankoCommons =  "org.jetbrains.anko:anko-commons:${Versions.ankoCommons}"
 

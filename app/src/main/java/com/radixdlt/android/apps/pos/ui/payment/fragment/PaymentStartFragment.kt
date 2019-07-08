@@ -43,8 +43,11 @@ class PaymentStartFragment : BaseFragment() {
 
     private fun setStartButtonOnClickListener() {
         paymentStartStartButton.setOnClickListener {
+//            findNavController().navigate(
+//                R.id.action_navigation_payment_start_to_navigation_payment_input_amount
+//            )
             findNavController().navigate(
-                R.id.action_navigation_payment_start_to_navigation_payment_input_amount
+                R.id.action_navigation_payment_start_to_navigation_payment_products_grid
             )
         }
     }

@@ -131,9 +131,14 @@
     <string name="fragment_payment_input_amount_reference">Reference: %1$s</string>
     <string name="fragment_payment_input_amount_reference_description">Reference: %1$s Description: %2$s</string>
 
+    <!-- PaymentProductSelectFragment -->
+    <!--<string name="fragment_payment_product_select_total_price">TOTAL PRICE: %1$.2f%</string>-->
+    <string name="fragment_payment_product_select_total_price">TOTAL PRICE: %1$s</string>
+
     <!-- PaymentCompleteFragment -->
     <string name="fragment_payment_complete_payment_complete">PAYMENT COMPLETE</string>
     <string name="fragment_payment_complete_finish_button">FINISH</string>
+    <string name="fragment_payment_complete_show_receipt_button">SHOW RECEIPT</string>
 
     <!-- PaymentCardErrorFragment -->
     <string name="fragment_payment_card_error_cancel_transaction_button">CANCEL TRANSACTION</string>

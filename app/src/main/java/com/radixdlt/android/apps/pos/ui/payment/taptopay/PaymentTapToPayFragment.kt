@@ -156,7 +156,7 @@ class PaymentTapToPayFragment : NfcReadFragment() {
 
     private fun navigateToPaymentComplete() {
         val action = PaymentTapToPayFragmentDirections
-            .actionNavigationPaymentTapToPayToNavigationPaymentComplete(amount)
+            .actionNavigationPaymentTapToPayToNavigationPaymentComplete(amount, reference)
         findNavController().navigate(action)
     }
 
