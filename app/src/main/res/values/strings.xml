@@ -107,7 +107,8 @@
     <string name="fragment_payment_start_accepted_here">ACCEPTED HERE</string>
     <string name="fragment_payment_start_powered_by_radix_logo_content_description">Powered by Radix logo</string>
     <string name="fragment_payment_start_start_button">START</string>
-    <string name="fragment_payment_start_no_network_connection">No network connection!</string>
+    <string name="fragment_payment_start_connecting">Connecting…</string>
+    <string name="fragment_payment_start_no_connection">No network connection!</string>
 
     <!-- PaymentTapScanFragment -->
     <string name="fragment_payment_tap_scan_tap_to_start">TAP TO START</string>

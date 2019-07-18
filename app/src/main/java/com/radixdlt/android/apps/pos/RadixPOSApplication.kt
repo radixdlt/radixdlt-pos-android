@@ -2,6 +2,7 @@ package com.radixdlt.android.apps.pos
 
 import android.app.Application
 import android.util.Base64
+import com.radixdlt.android.apps.pos.identity.BootStrapConfigAndroidImpl
 import com.radixdlt.android.apps.pos.identity.RadixApplicationAPI
 import com.radixdlt.android.apps.pos.util.Vault
 import timber.log.Timber
@@ -10,7 +11,11 @@ class RadixPOSApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        RadixApplicationAPI.init()
+
+        // Bootstrap to the network
+        val bootStrapConfig = BootStrapConfigAndroidImpl.radixBetanetNode()
+        RadixApplicationAPI.init(bootStrapConfig)
+
         Timber.plant(Timber.DebugTree())
         Vault.initialiseVault(this)
         generateEncryptionKey()

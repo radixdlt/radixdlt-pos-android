@@ -7,7 +7,6 @@ import com.radixdlt.android.apps.pos.identity.RadixApplicationAPI
 import com.radixdlt.android.apps.pos.util.TOKEN_REFERENCE_ADDRESS
 import com.radixdlt.android.apps.pos.util.TOKEN_REFERENCE_SYMBOL
 import com.radixdlt.android.apps.pos.util.VaultPreferences
-import com.radixdlt.client.application.identity.Data
 import com.radixdlt.client.application.translate.tokens.InsufficientFundsException
 import com.radixdlt.client.application.translate.tokens.TransferTokensAction
 import com.radixdlt.client.atommodel.accounts.RadixAddress
@@ -18,6 +17,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import org.bouncycastle.util.encoders.Hex
+import org.radix.utils.RadixConstants
 import timber.log.Timber
 
 class PaymentPinViewModel : ViewModel() {
@@ -44,14 +44,6 @@ class PaymentPinViewModel : ViewModel() {
             .pullOnce(radixAddress)
             .subscribeOn(Schedulers.io())
             .subscribe {
-            var attachment: Data? = null
-            if (reference.isNotEmpty()) {
-                attachment = Data.DataBuilder()
-                    .addReader(RadixAddress.from(VaultPreferences.getVaultPaymentAddress()).publicKey) // to
-                    .addReader(ecPublicKey) // mine
-                    .bytes(reference.toByteArray())
-                    .build()
-            }
 
             val transaction = radixApplicationAPI.createTransaction()
 
@@ -63,7 +55,7 @@ class PaymentPinViewModel : ViewModel() {
                     radixAddress,
                     RadixAddress.from(VaultPreferences.getVaultPaymentAddress()),
                     amount.toBigDecimal(),
-                    attachment?.bytes
+                    if (reference.isNotEmpty()) reference.toByteArray(RadixConstants.STANDARD_CHARSET) else null
                 ))
                 builtAtom(transaction.buildAtom())
             } catch (t: Throwable) {
