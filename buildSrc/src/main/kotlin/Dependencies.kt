@@ -27,7 +27,6 @@ object AndroidSdk {
 object Libraries {
     private object Versions {
         const val releaseBetanet = "release~1.0.0-beta-SNAPSHOT"
-        const val commit = "4158e57"
 
         const val ktlint = "0.33.0"
         const val ankoCommons = "0.10.8"
@@ -49,7 +48,7 @@ object Libraries {
 
     const val ktlint = "com.pinterest:ktlint:${Versions.ktlint}"
 
-    const val radixdltJava = "com.radixdlt:radixdlt-java:${Versions.commit}"
+    const val radixdltJava = "com.radixdlt:radixdlt-java:${Versions.releaseBetanet}"
 
     const val ankoCommons =  "org.jetbrains.anko:anko-commons:${Versions.ankoCommons}"
 
