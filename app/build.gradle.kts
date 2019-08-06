@@ -102,7 +102,6 @@ dependencies {
     implementation(Libraries.lifeCycleExtensions)
     implementation(Libraries.lifeCycleRuntimeKtx)
     implementation(Libraries.timber)
-    implementation(Libraries.material)
     implementation(Libraries.rxAndroid)
     implementation(Libraries.rxKotlin) {
         exclude("io.reactivex.rxjava2", "rxjava")

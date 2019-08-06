@@ -1,8 +1,8 @@
-const val kotlinVersion = "1.3.31"
+const val kotlinVersion = "1.3.41"
 
 object BuildPlugins {
     object Versions {
-        const val gradlePluginVersion = "3.4.0"
+        const val gradlePluginVersion = "3.5.0-rc02"
         const val safeArgs = "2.1.0-alpha04"
     }
 
@@ -26,7 +26,7 @@ object AndroidSdk {
 
 object Libraries {
     private object Versions {
-        const val releaseBetanet = "release~1.0.0-beta-SNAPSHOT"
+        const val releaseBetanet = "release~1.0.0-beta.1-SNAPSHOT"
 
         const val ktlint = "0.33.0"
         const val ankoCommons = "0.10.8"

@@ -5,7 +5,7 @@
 This branch of Radix DLT Android POS `release/1.0.0-beta` is the start of what is to come from our future public _BETANET_ release.
 
 The Radix DLT Android POS currently works with the _BETANET_ universe and interacts with it
-by making full use of the latest release of the [radixdlt-java](https://github.com/radixdlt/radixdlt-java/tree/release/1.0.0-beta) under the release/1.0.0-beta branch.
+by making full use of the latest release of the [radixdlt-java](https://github.com/radixdlt/radixdlt-java/tree/release/1.0.0-beta.1) under the release/1.0.0-beta branch.
 
 <img src="art/radix_pos_welcome.jpg" width="200">&nbsp;
 <img src="art/radix_pos_start.jpg" width="200">&nbsp;
@@ -14,7 +14,7 @@ by making full use of the latest release of the [radixdlt-java](https://github.c
 
 ## Development setup
 
-Use Android Studio 3.4.1 (or newer) to be able to build the app.
+Use Android Studio 3.5 Preview (or newer) to be able to build the app.
 
 #### Card Setup
 
