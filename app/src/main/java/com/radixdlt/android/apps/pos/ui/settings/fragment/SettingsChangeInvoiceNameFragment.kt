@@ -31,7 +31,6 @@ class SettingsChangeInvoiceNameFragment : BaseFragment(), BackFragment {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         initialiseToolBar()
         setCurrentInvoiceName()
         setListeners()

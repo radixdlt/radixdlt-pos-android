@@ -7,10 +7,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.radixdlt.android.apps.pos.R
-import com.radixdlt.android.apps.pos.identity.RadixApplicationAPI
 import com.radixdlt.android.apps.pos.ui.payment.dialog.PaymentCancelDialogFragment
 import com.radixdlt.android.apps.pos.util.VaultPreferences
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.tool_bar_white.*
 import net.skoumal.fragmentback.BackFragmentHelper
 

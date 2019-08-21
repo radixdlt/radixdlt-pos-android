@@ -78,10 +78,12 @@ class SettingsUserUnderstandingFragment : BaseFragment() {
     private fun setUnderstandingSwitchOnCheckedChangeListener() {
         settingsUserUnderstandingContentUnderstandSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                settingsUserUnderstandingContinueButton.backgroundTintList = setButtonColor(R.color.radixGreen)
+                settingsUserUnderstandingContinueButton.backgroundTintList =
+                    setButtonColor(R.color.radixGreen)
                 settingsUserUnderstandingContinueButton.isEnabled = true
             } else {
-                settingsUserUnderstandingContinueButton.backgroundTintList = setButtonColor(R.color.disabledLightGray)
+                settingsUserUnderstandingContinueButton.backgroundTintList =
+                    setButtonColor(R.color.disabledLightGray)
                 settingsUserUnderstandingContinueButton.isEnabled = false
             }
         }
