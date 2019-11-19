@@ -4,13 +4,17 @@
 
 This branch of Radix DLT Android POS `release/1.0.0-beta` is the start of what is to come from our future public _BETANET_ release.
 
+## Watch the video
+
+[![RadixDLT Point of Sale](art/radixdlt_video_player.png)](https://www.youtube.com/watch?v=5TPCC1F5VKw "RadixDLT Point of Sale")
+
 The Radix DLT Android POS currently works with the _BETANET_ universe and interacts with it
 by making full use of the latest release of the [radixdlt-java](https://github.com/radixdlt/radixdlt-java/tree/release/1.0.0-beta.1) under the release/1.0.0-beta branch.
 
 <img src="art/radix_pos_welcome.jpg" width="200">&nbsp;
 <img src="art/radix_pos_start.jpg" width="200">&nbsp;
-<img  src="art/radix_pos_amount.jpg" width="200">&nbsp;
-<img  src="art/radix_pos_tap_scan.jpg" width="200">
+<img src="art/radix_pos_amount.jpg" width="200">&nbsp;
+<img src="art/radix_pos_tap_scan.jpg" width="200">
 
 ## Development setup
 
